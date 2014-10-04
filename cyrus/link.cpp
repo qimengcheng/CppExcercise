@@ -19,6 +19,7 @@ node* create()
 		q->con = a[i];
 		q = p;
 	}
+	q->next = head;
 	return head;
 
 
