@@ -12,14 +12,17 @@ node* create()
 	node *head, *p, *q;
 	head = (node*)(malloc(sizeof(node)));
 	q = head;
-	for (int i = 1; i < sizeof (a) / 4; ++i)
+	for (int i = 0; i < sizeof (a) / 4; ++i)
 	{
+		
 		p = (node*)(malloc(sizeof(node)));
 		q->next = p;
-		q->con = a[i];
+		p->con = a[i];
 		q = p;
 	}
+	head = head->next;
 	q->next = head;
+
 	return head;
 
 
@@ -29,7 +32,7 @@ int main()
 {
 	node* head = create();
 	node* p = head;
-	for (int i = 1; p->next != NULL; i++)
+	for (int i = 1; p->next != p; i++)
 	{
 		if (i%5==4)
 		{
